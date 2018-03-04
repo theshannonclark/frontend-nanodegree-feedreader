@@ -99,9 +99,12 @@ $(function() {
         let initialContent;
 
         beforeEach(function(done) {
-            initialContent = $('.feed').html();
-            loadFeed(1, function() {
-                done();
+            loadFeed(0, function() {
+                initialContent = $('.feed').html();
+
+                loadFeed(1, function() {
+                    done();
+                });
             });
         });
 
